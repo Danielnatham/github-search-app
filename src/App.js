@@ -9,6 +9,8 @@ const App = () => {
     <Container maxWidth="sm">
       <TopBar />
       <User />
+      <button>Ver Repositorios</button>
+      <button>Ver Favorios</button>
       <Repos />
     </Container>
   );
