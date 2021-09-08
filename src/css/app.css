@@ -1,0 +1,10 @@
+* {
+  font-family: "Urbanist", sans-serif;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}

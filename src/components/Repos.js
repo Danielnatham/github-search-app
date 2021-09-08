@@ -1,18 +1,18 @@
-const Repos = () => {
-  return (
-    <div className="repo-container">
-      <h4>Repositorios: </h4>
-      <ul className="repos">
-        <li>
-          <a href="#">Lista de Repositorios</a>
-        </li>
-      </ul>
+import React from "react";
+import "../css/repos.css";
 
-      <h4>Favoritos: </h4>
-      <ul className="starrred">
-        <li>
-          <a href="#">Lista de Favoritos</a>
-        </li>
+const Repos = ({ className, name, repos }) => {
+  return (
+    <div className={className}>
+      <h4>{name}</h4>
+      <ul>
+        {repos.map((repos, index) => {
+          return (
+            <li key={index}>
+              <a href={repos.link}>{repos.name}</a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

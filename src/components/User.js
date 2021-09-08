@@ -1,3 +1,5 @@
+import "../css/user.css";
+
 const User = () => {
   return (
     <div className="user-container">
@@ -6,12 +8,14 @@ const User = () => {
         src="https://avatars.githubusercontent.com/u/1?v=4"
         alt="Foto de perfil"
       />
+
       <div className="user-card">
         <div className="user-name">
-          <h3>
+          <h4>
             <a href="http://github.com/mojombo">Tom Preston-Werner</a>
-          </h3>
+          </h4>
         </div>
+
         <div className="user-atributes">
           <ul>
             <li>Seguidores: 100</li>

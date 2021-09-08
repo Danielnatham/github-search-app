@@ -1,0 +1,16 @@
+.repo-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  border-top: 1px solid black;
+}
+
+.starred {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.repo {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

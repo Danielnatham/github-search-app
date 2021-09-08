@@ -1,0 +1,11 @@
+.topbar-container {
+  display: flex;
+
+  align-content: space-between;
+  align-items: center;
+}
+
+.topbar-title {
+  margin-left: 2.5rem;
+  margin-right: 8rem;
+}
