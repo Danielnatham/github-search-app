@@ -1,16 +1,15 @@
-import TopBar from "./components/TopBar";
-import User from "./components/User";
-import Repos from "./components/Repos";
-import Actions from "./components/Actions";
-
+import AppContainer from "./components/AppContainer";
 import "./css/app.css";
 
-import { Container } from "@material-ui/core";
-import { Component } from "react";
+import React, { Component } from "react";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
-    //mock repo
     const mockRepos = [
       {
         name: "Repositorio 1",
@@ -26,7 +25,6 @@ class App extends Component {
       },
     ];
 
-    //mock repo
     const mockStarred = [
       {
         name: "Repositorio 1",
@@ -42,17 +40,7 @@ class App extends Component {
       },
     ];
 
-    return (
-      <Container className="container" maxWidth={"sm"}>
-        <TopBar />
-        <User />
-        <Actions />
-        <div className="repo-container">
-          <Repos className="repos" name="Repositorios" repos={mockRepos} />
-          <Repos className="starrred" name="Favoritos" repos={mockStarred} />
-        </div>
-      </Container>
-    );
+    return <AppContainer repos={mockRepos} starred={mockStarred} />;
   }
 }
 
