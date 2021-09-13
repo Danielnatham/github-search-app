@@ -6,16 +6,18 @@ import Actions from "./Actions";
 import { Container } from "@material-ui/core";
 import React from "react";
 
-const AppContainer = ({ repos, starred }) => {
+const AppContainer = ({ repos, starred, userinfo }) => {
   return (
     <Container className="container" maxWidth={"sm"}>
       <TopBar />
-      <User />
-      <Actions />
-      <div className="repo-container">
+      {!!userinfo && <User userinfo={userinfo} />}
+      {!!userinfo && <Actions />}
+      {!!repos.length && (
         <Repos className="repos" name="Repositorios" repos={repos} />
+      )}
+      {!!starred.length && (
         <Repos className="starrred" name="Favoritos" repos={starred} />
-      </div>
+      )}
     </Container>
   );
 };
