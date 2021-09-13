@@ -36,6 +36,25 @@ class App extends Component {
     }
   }
 
+  getRepos(type) {
+    return (e) => {
+      ajax()
+        .get(
+          `https://api.github.com/users/${this.state.userinfo.login}/${type}`
+        )
+        .then((res) => {
+          this.setState({
+            [type]: res.map((repo) => {
+              return {
+                name: repo.name,
+                html_url: repo.html_url,
+              };
+            }),
+          });
+        });
+    };
+  }
+
   render() {
     return (
       <AppContainer
@@ -43,6 +62,8 @@ class App extends Component {
         starred={this.state.starred}
         userinfo={this.state.userinfo}
         handleSearch={(e) => this.handleSearch(e)}
+        getRepos={this.getRepos("repos")}
+        getStarred={this.getRepos("starred")}
       />
     );
   }

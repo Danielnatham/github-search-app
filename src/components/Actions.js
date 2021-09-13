@@ -1,10 +1,10 @@
 import "../css/actions.css";
 
-const Actions = () => {
+const Actions = ({ getRepos, getStarred }) => {
   return (
     <div className="action-container">
-      <button>Ver Repositorios</button>
-      <button>Ver Favorios</button>
+      <button onClick={getRepos}>Ver Repositorios</button>
+      <button onClick={getStarred}>Ver Favorios</button>
     </div>
   );
 };
